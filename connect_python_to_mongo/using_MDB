@@ -1,0 +1,49 @@
+#!/usr/bin/python
+
+""" the package to connect MDB"""
+from pymongo import Connection
+from pymongo.errors import ConnectionFailure
+
+user_doc = {
+	"username": "SGjorge",
+	"firstname": "jorge",
+	"surname": "simon"
+}
+
+#usa formato JSON para la base de datos, los objetos son como un JSON
+dummy_patient = {
+	# querremos que lo coja automaticamente del archivo de datos personales, los que lo tienen
+	# y los que no lo tengan
+	"username": "", # fisrtname + surname --> PK
+	"firstname":"pepe",
+	"surname":"",
+	"age":"", # se puede sacar de la fecha de nacimiento, por lo que no se que es mejor si pedir edad o fecha de nacimiento. 
+	"sex":"",
+	"issues":"",
+	"medicines":""
+	"type":""  # control, asintomatico, claudicante
+}
+
+def main():
+	print "---------------------- insert and write into MDB ---------------------"
+
+	try:
+		c=Connection(host="localhost",port=27017)
+	except ConnectionFailure,e:
+		sys.stderr.write("Could not connect to MDB: %s" %e)
+		sys.exit(1)
+
+	dbh= c["mydb"]
+	assert dbh.connection == c
+
+	""" insert a collection into MDB """
+	dbh.users.insert(user_doc,safe=True)
+	dbh.users.insert(dummy_patient,safe=True)
+	print "Successfully inserted document: %s" % user_doc
+	print "Successfully inserted document: %s" % dummy_patient
+
+	""" insert,update, remove and findAndModify """
+
+if __name__=="__main__":
+	print "donde se me crea la base de datos?"
+	main()
