@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<!-- Meta Info -->
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>first template</title>
+    	<!-- CSS -->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+    	<!-- JS -->
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+                 <!-- CDN Highcharts-->
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="js/graphics.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        	<div class="container-fluid">
+            	<!-- Brand and toggle get grouped for better mobile display -->
+            	<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                	<a class="navbar-brand" style="color:white;" id="P" >EAP App</a>
+            	</div>
+            	<!-- Collect the nav links, forms, and other content for toggling -->
+            	<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                	<ul class="nav navbar-nav">
+                    	<li>
+                        	<a style="color:white;" id="SP">Buscar Paciente</a>
+                    	</li>
+                    	<li>
+                        	<a style="color:white;" id="CR">Calcular Riesgo</a>
+                    	</li>
+                        <li>
+                            <a style="color:white;" id="G">Graficos</a>
+                        </li>
+                    	<li>
+                        	<a style="color:white;" id="SuP">Registrar Paciente</a>
+                    	</li>
+                	</ul>
+            	</div>
+            	<!-- /.navbar-collapse -->
+        	</div>
+    	</nav>
+    	<header id="headerLines"style="overflow" class="header-image">
+        	<div class="headline col-sm-12">
+            	<div class="container-fluid col-sm-8" style="float:left">
+                	<h1>Autor: Jorge Simón Gil</h1>
+                	<h2>Grado: Tecnologías de la Telecomunicación</h2>
+                </div>
+                <div class="container-fluid col-sm-4">
+                    <img src="images/urjcTranspa.png"  ></img>
+                </div>
+        	</div>
+    	</header>
+
+    	<!-- Page Content -->
+        <div id="allPage">
+    	<div id="Principal" class="container-fluid col-sm-12">
+
+            <!-- Carrusel -->
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img  src="images/buscarPaciente_2.PNG" alt="banner1" />
+                        <div class="carousel-caption d-none d-md-block carrousel-letter">
+                            <h3>Buscar Paciente</h3>
+                            <p>Permite consultar un paciente previamente intruducido</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img  src="images/Riesgo.PNG" alt="banner2" />
+                        <div class="carousel-caption d-none d-md-block carrousel-letter">
+                            <h3>Calcular Riesgo</h3>
+                            <p>Permite calcular el riesgo que tiene el paciente en función de los datos personales</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img  src="images/graficos_2.PNG" alt="banner3" />
+                        <div class="carousel-caption d-none d-md-block carrousel-letter">
+                            <h3>Graficos</h3>
+                            <p>Permite ver diversos gráficos sobre los paciente registrados</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img  src="images/registro_pacientes_2.PNG" alt="banner4" />
+                        <div class="carousel-caption d-none d-md-block carrousel-letter">
+                            <h3>Registrar Paciente</h3>
+                            <p>Permite dar de alta a un nuevo paciente</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+            </div>
+            <br>
+    	</div>
+
+    	<!-- Search Patient -->
+        <div id="Search Patient" hidden="hidden" class="container-fluid">
+            <h1>Buscar Paciente</h1>
+            <p>Permite consultar un paciente previamente intruducido</p>
+            <div class="col-sm-12">
+                <form id="SPF" class="form-group form-inline col-sm-9" action="/formSearchPatient">
+                    <label for="idPatient">Id del paciente:</label>
+                    <input type="text" class="form-control" id="idPatient" name="idPatient" value="">
+                    <button type="submit" id="SubmitForm" class="btn btn-default">Enviar</button>
+                    <a class="btn btn-default" href="csv/users.csv">usuarios.csv</a>
+                </form>
+                <form id="SPF" class="form-group col-sm-3" action="/restartUsers">
+                    <button type="submit" id="SubmitRestart" class="btn btn-warning">Reiniciar usuarios</button>
+                </form>
+            </div>
+        </div>
+
+    	<!-- Calculate Risk -->
+        <div id="Calculate Risk" hidden="hidden" class="container-fluid">
+            <h1>Calcular Riesgo</h1>
+            <p> Permite calcular el riesgo que tiene el paciente en función de los datos personales</p>
+            <form id="RPF" class="form-group form-inline" action="/formCalculateRisk">
+                <label for="idPatient">Id del paciente:</label>
+                <input type="text" class="form-control" id="idPatient" name="idPatient" value="">
+                <select id="modelML" name='modelSelect' class="btn btn-default" form="RPF" >{{ modelsML|safe }}</select>
+                <button type="submit" id="SubmitForm" class="btn btn-default">Enviar</button>
+            </form>
+        </div>
+
+    	<!-- Sing up Patient -->
+        <div id="Sing up Patient" hidden="hidden" class="container-fluid">
+            <h1>Registrar Paciente</h1>
+            <p> Permite dar de alta a un nuevo paciente</p>
+            <form id="SuPF" class="form-group" enctype="multipart/form-data" action="/formSingupPatient" method="POST">
+                <div class="container-fluid">
+                    <label for="firstname">Nombre:</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" value="">
+                    <label for="surname">Apellidos:</label>
+                    <input type="text" class="form-control" id="surname" name="surname">
+                    <label for="age">Edad:</label>
+                    <input type="number" class="form-control" min="0" id="age" name="age">
+                    <label for="height">Altura:</label>
+                    <input type="number" class="form-control" min="0" id="height" name="height">
+                    <label for="weight">Peso:</label>
+                    <input type="number" class="form-control" min="0" id="weight" name="weight">
+                </div>
+
+                <hr></hr>
+
+                <div class="container-fluid col-sm-4 form-group">
+                    <label for="sex">Sexo del paciente</label>
+                    <select name="sex" id="sex" class="rounded">
+                        <option>Varon</option>
+                        <option>Hembra</option>
+                    </select>
+                </div>
+                <div class="container-fluid col-sm-4 form-group">
+                    <label for="typePatient">Tipo de paciente</label>
+                    <select name="typePatient" id="typePatient" class="rounded">
+                        <option>Control</option>
+                        <option>Asintomatico</option>
+                        <option>Claudicante</option>
+                    </select><br>
+                </div>
+                <div class="container-fluid col-sm-4 form-group">
+                    <label for="leg">Pierna dominante</label>
+                    <select name="leg" id="leg" class="rounded">
+                        <option>Derecha</option>
+                        <option>Izquierda</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 form-group form-inline">
+                    <label for="athletic" class="col-sm-2">Informacion relevante:</label>
+                    <div class="checkbox col-sm-2">
+                        <label>
+                            <input type="checkbox" value="True" name="athletic">Actividad física</input>
+                        </label>
+                    </div>
+                    <div class="checkbox col-sm-2">
+                        <label>
+                            <input type="checkbox" value="True" name="smoker">Fumador</input>
+                        </label>
+                    </div>
+                    <div class="checkbox col-sm-2">
+                        <label>
+                            <input type="checkbox" value="True" name="flat-concave_foot">Pies concavo/plano</input>
+                        </label>
+                    </div>
+                    <div class="checkbox col-sm-2">
+                        <label>
+                            <input type="checkbox" value="True" name="templete">Plantillas</input>
+                        </label>
+                    </div>
+                </div>
+
+                <hr></hr>
+
+                <div class="col-sm-5 form-group">
+                    <label for="diseases">Enfermedades del paciente</label>
+                    <div class="scroll">{{ diseases|safe }}</div>
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="medicines">Medicamentos tomados por el paciente</label>
+                    <div class="scroll">{{ medicines|safe }}</div>
+                </div>
+                <div>
+                    <input type="file" multiple="true" name="patientFiles" class="rounded col-sm-4"></input>
+                </div>
+                <button type="submit" id="SubmitForm" class="btn btn-default col-sm-4">Enviar</button>
+            </form>
+        </div>
+        <!-- Graphics -->
+        <div id="Graphics" hidden="hidden" class="container">
+            <div class="container-fluid col-sm-4 form-group">
+                <label for="graphics_select">Graph</label>
+                <select name="graphics_select" id="graphics_select">
+                    <option>Enfermedades</option>
+                    <option>Medicinas</option>
+                    <option>Tipos de paciente</option>
+                    <option>Boxplot Edad según Sexo</option>
+                    <option>Histograma de Edades </option>
+                    <option>Histograma de Alturas</option>
+                    <option>Histograma de Pesos</option>
+                </select>
+            </div>
+            <div id="diseasesVal" hidden="hidden"> {{ diseasesVal|safe }} </div>
+            <div id="medicinesVal" hidden="hidden"> {{ medicinesVal|safe }} </div>
+            <div id="typeVal" hidden="hidden"> {{ typeVal|safe }} </div>
+            <div id="sexVal" hidden="hidden"> {{ sexVal|safe }} </div>
+            <div id="legVal" hidden="hidden"> {{ legVal|safe }} </div>
+            <div id="smokerVal" hidden="hidden"> {{ smokerVal|safe }} </div>
+            <div id="athleticVal" hidden="hidden"> {{ athleticVal|safe }} </div>
+            <div id="footVal" hidden="hidden"> {{ footVal|safe }} </div>
+            <div id="templateVal" hidden="hidden"> {{ templateVal|safe }} </div>
+            <div id="ageVal" hidden="hidden"> {{ ageVal|safe }} </div>
+            <div id="heightVal" hidden="hidden"> {{ heightVal|safe }} </div>
+            <div id="weightVal" hidden="hidden"> {{ weightVal|safe }} </div>
+            <div id="diseasesGraph"></div>
+            <div id="medicinesGraph" hidden="hidden"></div>
+            <div id="typeGraph" hidden="hidden"></div>
+            <div id="sexGraph" hidden="hidden"></div>
+            <div id="legGraph" hidden="hidden"></div>
+            <div id="smokerGraph" hidden="hidden"></div>
+            <div id="athleticGraph" hidden="hidden"></div>
+            <div id="footGraph" hidden="hidden"></div>
+            <div id="templateGraph" hidden="hidden"></div>
+            <div id="ageGraph" hidden="hidden"></div>
+            <div id="heightGraph" hidden="hidden"></div>
+            <div id="weightGraph" hidden="hidden"></div>
+        </div>
+    </div>
+	</body>
+</html>

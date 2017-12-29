@@ -1,0 +1,53 @@
+body {
+	padding-top: 4%;
+	margin-bottom: 3%;
+}
+
+#allPage{
+	background: rgba(237,237,237,1);
+	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237,237,237,1)), color-stop(53%, rgba(246,246,246,1)), color-stop(100%, rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=0 );
+}
+
+#headerLines {
+	background: rgba(237,237,237,1);
+	color: black;
+}
+
+nav, .carrousel-letter{
+	background: rgba(109,0,25,1);
+background: -moz-linear-gradient(top, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 26%, rgba(169,3,41,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(109,0,25,1)), color-stop(26%, rgba(143,2,34,1)), color-stop(100%, rgba(169,3,41,1)));
+background: -webkit-linear-gradient(top, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 26%, rgba(169,3,41,1) 100%);
+background: -o-linear-gradient(top, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 26%, rgba(169,3,41,1) 100%);
+background: -ms-linear-gradient(top, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 26%, rgba(169,3,41,1) 100%);
+background: linear-gradient(to bottom, rgba(109,0,25,1) 0%, rgba(143,2,34,1) 26%, rgba(169,3,41,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d0019', endColorstr='#a90329', GradientType=0 );
+}
+
+div.scroll {
+    height: 13.5em;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+img {
+	margin: auto;
+}
+
+.radius {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.carousel-inner {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
